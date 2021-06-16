@@ -70,8 +70,8 @@ async def scrap(tr, container_mod_file, widgets_mod_file):
                 output_file = open(f"{CONTAINERS_OUTPUT_DIR}/{gtk_node_file_name}.rs", 'w')
                 output_file.write(f"""{doc_comment}
 use crate::*;
-create_widget!({gtk_node});
-impl_widget!({gtk_node});""")
+create_desktop_container!({gtk_node});
+impl_desktop_container!({gtk_node});""")
                 container_mod_file.write(mod)
             else:
                 output_file = open(f"{WIDGETS_OUTPUT_DIR}/{gtk_node_file_name}.rs", 'w')
